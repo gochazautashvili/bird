@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ჩიტი — Family &amp; Friends Cafe | Tbilisi</title>
+<meta name="description" content="ჩიტი — ოჯახური brunch კაფე თბილისში. დილის საუზმე მთელი დღე, საბავშვო ზონა, 3 ლოკაცია. Family & friends brunch cafe in Tbilisi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Serif+Georgian:opsz,wght@12..72,400;12..72,500;12..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF6EE;--bg-2:#F3EAD9;--card:#FFFDF8;--ink:#2B2118;--ink-soft:#5C5044;
+    --terra:#C75D3A;--terra-deep:#A8431F;--sage:#6B7350;--sage-deep:#4E563B;--line:#E4D8C3;
+    --font-display:'Fraunces','Noto Serif Georgian',Georgia,serif;
+    --font-body:'Hanken Grotesk','Noto Sans Georgian',sans-serif;
+    --shadow-soft:0 1px 2px rgba(43,33,24,.04),0 8px 24px rgba(43,33,24,.06);
+    --shadow-lift:0 2px 4px rgba(43,33,24,.05),0 18px 50px rgba(43,33,24,.12);
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+  ::selection{background:var(--terra);color:#fff}
+  h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.05;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,92vw);margin-inline:auto}
+  .em{font-style:italic;color:var(--terra)}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s ease;padding:22px 0}
+  header.scrolled{padding:12px 0;background:rgba(251,246,238,.96);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:24px;font-weight:600}
+  .brand svg{width:34px;height:34px;flex:none;animation:bob 5s ease-in-out infinite}
+  .nav-links{display:flex;gap:30px;align-items:center;font-weight:500;font-size:15.5px}
+  .nav-links a{position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--terra);transition:width .28s ease}
+  .nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+  .nav-links a.cta-link{color:var(--terra);font-weight:600}
+  .nav-links a.cta-link::after{width:100%;height:2.5px}
+  .nav-links a.cta-link:hover{color:var(--terra-deep)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-weight:600;font-size:13px}
+  .lang button{background:none;border:none;padding:7px 13px;cursor:pointer;color:var(--ink-soft);font-family:var(--font-body);font-weight:600;transition:.2s}
+  .lang button.active{background:var(--ink);color:var(--bg)}
+  .btn{font-family:var(--font-body);font-weight:600;font-size:15px;cursor:pointer;border:none;padding:12px 24px;border-radius:999px;transition:transform .18s ease,box-shadow .25s ease,background .2s;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:var(--terra);color:#fff;box-shadow:0 6px 18px rgba(199,93,58,.35)}
+  .btn-primary:hover{background:var(--terra-deep);transform:translateY(-2px);box-shadow:0 10px 26px rgba(199,93,58,.42)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .hamburger span{width:24px;height:2px;background:var(--ink);transition:.3s;border-radius:2px}
+
+  /* HERO */
+  .hero{position:relative;padding:170px 0 84px;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:0;will-change:transform}
+  .blob.b1{width:520px;height:520px;background:radial-gradient(circle at 30% 30%,#F2C8A0,transparent 70%);top:-120px;right:-120px;animation:drift 18s ease-in-out infinite}
+  .blob.b2{width:430px;height:430px;background:radial-gradient(circle at 50% 50%,#CBD3B0,transparent 70%);bottom:-160px;left:-120px;opacity:.45;animation:drift 22s ease-in-out infinite reverse}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--terra)}
+  .hero h1{font-size:clamp(42px,6.4vw,78px);font-weight:500;margin-bottom:24px}
+  .clip{display:block;overflow:hidden;padding-bottom:.04em}
+  .clip>span{display:block;transform:translateY(115%);animation:rise .9s cubic-bezier(.2,.85,.25,1) forwards}
+  .hero h1 .clip:nth-child(2)>span{animation-delay:.12s}
+  .fade-up{opacity:0;transform:translateY(20px);animation:fadeUp .8s cubic-bezier(.2,.8,.2,1) forwards}
+  .fade-up.d1{animation-delay:.32s}.fade-up.d2{animation-delay:.44s}.fade-up.d3{animation-delay:.56s}.fade-up.d4{animation-delay:.68s}
+  .hero p.lead{font-size:19px;color:var(--ink-soft);max-width:46ch;margin-bottom:34px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-stats{display:flex;gap:34px;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+  .stat .n{font-family:var(--font-display);font-size:32px;font-weight:600;color:var(--sage-deep);line-height:1}
+  .stat .l{font-size:13.5px;color:var(--ink-soft);margin-top:5px}
+  .hero-art{position:relative;aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,#F6E2C8,#EBD2AF);box-shadow:var(--shadow-lift);overflow:hidden;display:flex;align-items:center;justify-content:center;animation:float 7s ease-in-out infinite;will-change:transform}
+  .hero-art .ring{position:absolute;border:1.5px dashed rgba(168,67,31,.35);border-radius:50%}
+  .hero-art .ring.r1{inset:26px;animation:spin 40s linear infinite}
+  .hero-art .ring.r2{inset:64px;border-style:solid;border-color:rgba(78,86,59,.18);animation:spin 55s linear infinite reverse}
+  .hero-art .bird-big{width:54%;color:var(--terra-deep);filter:drop-shadow(0 12px 22px rgba(168,67,31,.25));animation:bob 5s ease-in-out infinite}
+  .hero-art .tag{position:absolute;background:var(--card);border-radius:14px;padding:11px 16px;box-shadow:var(--shadow-soft);font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .hero-art .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+  .hero-art .tag.t1{top:24px;left:24px;animation:float 6s ease-in-out infinite .4s}
+  .hero-art .tag.t2{bottom:26px;right:22px;animation:float 6.5s ease-in-out infinite .8s}
+  .hero-art .tag.t3{bottom:120px;left:-18px;background:var(--sage-deep);color:#fff;animation:float 7.5s ease-in-out infinite .2s}
+  .hero-art .tag.t3 .dot{background:#E8D9A8}
+
+  /* MARQUEE */
+  .marquee{background:var(--ink);color:var(--bg);padding:16px 0;overflow:hidden;white-space:nowrap;display:flex;user-select:none}
+  .marquee .track{display:flex;flex:none;gap:0;animation:scroll 26s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee .item{font-family:var(--font-display);font-size:22px;font-style:italic;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+  .marquee .item::after{content:"✦";font-style:normal;color:var(--terra);font-size:14px}
+
+  /* VALUES */
+  .values{padding:60px 0 10px}
+  .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .value{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow-soft);transition:transform .25s,box-shadow .25s}
+  .value:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .value .ico{width:42px;height:42px;border-radius:12px;background:var(--bg-2);display:flex;align-items:center;justify-content:center;color:var(--terra);margin-bottom:16px}
+  .value h3{font-size:19px;margin-bottom:6px}
+  .value p{font-size:14.5px;color:var(--ink-soft)}
+
+  section{padding:96px 0}
+  .sec-head{margin-bottom:46px;max-width:640px}
+  .sec-head .eyebrow{margin-bottom:16px}
+  .sec-head h2{font-size:clamp(32px,4.4vw,52px);font-weight:500}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:17.5px}
+
+  /* STORY */
+  #story{position:relative;overflow:hidden}
+  .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .story-art{position:relative;aspect-ratio:1;border-radius:26px;background:linear-gradient(150deg,var(--sage),var(--sage-deep));display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lift);overflow:hidden}
+  .story-art .big-bird{width:58%;color:rgba(255,255,255,.92);animation:bob 6s ease-in-out infinite}
+  .story-art .halo{position:absolute;width:78%;height:78%;border:1.5px dashed rgba(255,255,255,.25);border-radius:50%;animation:spin 48s linear infinite}
+  .story-art .est{position:absolute;bottom:18px;right:20px;font-family:var(--font-display);font-style:italic;color:rgba(255,255,255,.7);font-size:15px}
+  .story-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform}
+  .story-text h2{font-size:clamp(30px,4vw,46px);margin-bottom:20px}
+  .story-text p{color:var(--ink-soft);margin-bottom:16px;font-size:17px}
+  .story-text p strong{color:var(--ink);font-weight:600}
+
+  /* MENU */
+  #menu{background:linear-gradient(180deg,var(--bg),var(--bg-2) 60%,var(--bg))}
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .menu-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 30px 26px;box-shadow:var(--shadow-soft)}
+  .menu-card h3{font-size:23px;display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .menu-card h3 .cat-mark{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--terra);background:var(--bg-2);padding:5px 9px;border-radius:8px}
+  .dish{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 0}
+  .dish:not(:last-child){border-bottom:1px dotted var(--line)}
+  .dish .d-name{font-weight:500}
+  .dish .d-desc{display:block;font-size:13px;color:var(--ink-soft);font-weight:400}
+  .dish .d-price{font-family:var(--font-display);font-weight:600;color:var(--sage-deep);white-space:nowrap}
+  .menu-foot{text-align:center;margin-top:42px}
+
+  /* TESTIMONIALS */
+  #reviews{background:var(--bg-2)}
+  .rev-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px}
+  .gbadge{display:inline-flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 20px;box-shadow:var(--shadow-soft)}
+  .gbadge .score{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--ink);line-height:1}
+  .gbadge .stars{color:var(--terra);font-size:15px;letter-spacing:2px}
+  .gbadge .meta{font-size:13px;color:var(--ink-soft)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:16px;transition:transform .25s,box-shadow .25s}
+  .rev:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .rev .quote{font-family:var(--font-display);font-style:italic;font-size:18.5px;line-height:1.45;color:var(--ink)}
+  .rev .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .rev .av{width:42px;height:42px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-display)}
+  .rev .who .nm{font-weight:600;font-size:15px}
+  .rev .who .sub{font-size:12.5px;color:var(--ink-soft)}
+
+  /* LOCATIONS */
+  .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .loc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .25s,box-shadow .25s;position:relative}
+  .loc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+  .loc .loc-top{height:120px;background:linear-gradient(135deg,var(--sage),var(--sage-deep));position:relative;overflow:hidden}
+  .loc .loc-top svg{position:absolute;right:-10px;bottom:-14px;width:120px;color:rgba(255,255,255,.16)}
+  .loc .badge{position:absolute;top:14px;left:14px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px}
+  .loc-body{padding:22px 24px 26px}
+  .loc-body h3{font-size:21px;margin-bottom:6px}
+  .loc-body .addr{color:var(--ink-soft);font-size:14.5px;margin-bottom:14px}
+  .loc-body .hrs{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--sage-deep);margin-bottom:18px}
+  .loc-body .hrs .pulse{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 0 rgba(107,115,80,.6);animation:pulse 2s infinite}
+  .loc-body a.maps{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:14.5px;color:var(--terra)}
+  .loc-body a.maps:hover{color:var(--terra-deep)}
+
+  /* CATERING */
+  #events{padding:40px 0 96px}
+  .events-band{background:linear-gradient(135deg,var(--terra),var(--terra-deep));color:#fff;border-radius:28px;padding:54px 56px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lift)}
+  .events-band .ghost-bird{position:absolute;right:-30px;top:-30px;width:240px;color:rgba(255,255,255,.1)}
+  .events-band h2{color:#fff;font-size:clamp(28px,3.6vw,44px);margin-bottom:16px;position:relative}
+  .events-band p{color:rgba(255,255,255,.9);font-size:17px;max-width:48ch;position:relative}
+  .events-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;position:relative}
+  .events-tags span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:600}
+  .events-cta{position:relative;display:flex;flex-direction:column;gap:12px}
+  .events-cta .btn{justify-content:center;width:100%}
+  .events-cta .btn-white{background:#fff;color:var(--terra-deep)}
+  .events-cta .btn-white:hover{background:var(--bg);transform:translateY(-2px)}
+  .events-cta .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff}
+  .events-cta .btn-line:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+
+  /* ORDER / RESERVE */
+  #order{background:var(--ink);color:var(--bg)}
+  #order .eyebrow{color:#E8B58F}#order .sec-head h2{color:#fff}#order .sec-head p{color:#C9BCAC}
+  .order-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .delivery-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px}
+  .delivery-box h3{color:#fff;font-size:22px;margin-bottom:8px}
+  .delivery-box p{color:#C9BCAC;font-size:15px;margin-bottom:22px}
+  .delivery-btns{display:flex;flex-direction:column;gap:12px}
+  .dlv{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:15px 18px;font-weight:600;transition:.2s}
+  .dlv:hover{background:rgba(255,255,255,.1);transform:translateX(4px)}
+  .dlv .arr{color:#E8B58F}
+  form.reserve{background:var(--card);color:var(--ink);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-lift)}
+  form.reserve h3{font-size:22px;margin-bottom:6px}
+  form.reserve .fsub{font-size:14.5px;color:var(--ink-soft);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink-soft)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field input,.field select{width:100%;font-family:var(--font-body);font-size:15px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);transition:border .2s,box-shadow .2s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(199,93,58,.14)}
+  form.reserve .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--sage-deep);color:#fff;padding:15px 26px;border-radius:14px;font-weight:600;box-shadow:var(--shadow-lift);z-index:200;transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;gap:10px}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* FOOTER */
+  footer{background:var(--bg-2);padding:70px 0 34px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{color:var(--ink-soft);font-size:15px;max-width:34ch}
+  .foot-col h4{font-family:var(--font-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;font-weight:700}
+  .foot-col a,.foot-col p{display:block;color:var(--ink);font-size:15.5px;margin-bottom:10px;transition:color .2s}
+  .foot-col a:hover{color:var(--terra)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft);flex-wrap:wrap;gap:10px}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+
+  /* KEYFRAMES */
+  @keyframes rise{to{transform:translateY(0)}}
+  @keyframes fadeUp{to{opacity:1;transform:none}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-3deg)}}
+  @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,24px)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulse{70%{box-shadow:0 0 0 7px rgba(107,115,80,0)}100%{box-shadow:0 0 0 0 rgba(107,115,80,0)}}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ================= RESPONSIVE ================= */
+
+  /* --- Tier 1: tighten nav & gutters on small laptops --- */
+  @media(max-width:1080px){
+    .wrap{width:min(1180px,100% - 40px)}
+    .nav-links{gap:22px;font-size:15px}
+    .nav-right{gap:10px}
+    .btn{padding:11px 18px;font-size:14.5px}
+  }
+
+  /* --- Tier 2: tablets / large phones (≤920) — collapse nav to drawer, grids to 2-up/1-up --- */
+  @media(max-width:920px){
+    /* drawer nav */
+    .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,330px);background:var(--bg);flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;font-size:22px;transform:translateX(105%);transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 60px rgba(43,33,24,.16);padding:48px 40px;z-index:95}
+    .nav-links.open{transform:none}
+    .nav-links a{color:var(--ink)}
+    .nav .btn-primary{display:none}
+    .hamburger{display:flex;position:relative;z-index:101}
+    .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    body.nav-open{overflow:hidden}
+    .nav-scrim{position:fixed;inset:0;background:rgba(43,33,24,.4);opacity:0;visibility:hidden;transition:.35s;z-index:90}
+    .nav-scrim.show{opacity:1;visibility:visible}
+    #events{padding:24px 0 84px}
+
+    /* layout */
+    .hero{padding:150px 0 70px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-art{max-width:400px;margin-inline:auto;width:100%}
+    .story-grid{grid-template-columns:1fr;gap:36px}
+    .story-art{max-width:360px;margin-inline:auto;width:100%}
+    .order-grid{grid-template-columns:1fr;gap:28px}
+    .events-band{grid-template-columns:1fr;padding:44px 36px}
+    .events-band .ghost-bird{width:180px}
+    .values-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-grid{grid-template-columns:repeat(2,1fr)}
+    .loc-grid{grid-template-columns:repeat(2,1fr)}
+    .menu-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1.4fr 1fr;gap:34px}
+    section{padding:84px 0}
+  }
+
+  /* --- Tier 3: phones (≤620) — everything single column --- */
+  @media(max-width:620px){
+    body{font-size:16px}
+    .wrap{width:min(1180px,100% - 32px)}
+    .hero{padding:128px 0 56px}
+    .hero p.lead{font-size:17.5px}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{justify-content:center;width:100%}
+    .hero-stats{gap:20px;flex-wrap:wrap}
+    .marquee .item{font-size:18px;padding:0 18px;gap:18px}
+    section{padding:64px 0}
+    .sec-head{margin-bottom:34px}
+    .values-grid,.rev-grid,.loc-grid,.foot-grid{grid-template-columns:1fr}
+    .foot-grid{gap:28px}
+    .menu-card,.delivery-box,.rev{padding:24px}
+    form.reserve{padding:24px}
+    .row2{grid-template-columns:1fr;gap:0}
+    .rev-head{align-items:flex-start}
+    .gbadge{width:100%}
+    .events-band{padding:34px 22px;border-radius:20px}
+    #events{padding:12px 0 64px}
+    .events-band .ghost-bird{width:140px;right:-20px;top:-20px}
+    .events-cta{width:100%}
+  }
+
+  /* --- Tier 4: small phones (≤400) --- */
+  @media(max-width:400px){
+    .brand{font-size:21px}.brand svg{width:30px;height:30px}
+    .hero{padding:120px 0 48px}
+    .hero-stats{gap:16px}
+    .stat .n{font-size:26px}.stat .l{font-size:12px}
+    .lang button{padding:6px 10px}
+    .sec-head p,.hero p.lead{font-size:16px}
+    .rev .quote{font-size:17px}
+    .marquee .item{font-size:16px}
+  }
+
+  /* CLEAN MOTION: respect reduced-motion */
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .clip>span,.fade-up{transform:none!important;opacity:1!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bird" viewBox="0 0 64 64">
+    <path fill="currentColor" d="M52 14c-3.1 0-5.9 1.3-7.9 3.4C40.6 13.3 35.6 11 30 11 18.4 11 9 20.4 9 32c0 1.6.2 3.1.5 4.6-2.1 1-3.5 3.1-3.5 5.6 0 .8.6 1.4 1.4 1.4.5 0 1-.3 1.2-.7.5-.9 1.4-1.5 2.5-1.6C15 49.6 22 54 30 54c12.7 0 23-10.3 23-23 0-1.4-.1-2.7-.4-4 .4.1.9.1 1.4.1 3.3 0 6-2.7 6-6s-2.7-7.2-8-7.1zM41 30.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/>
+  </symbol>
+</svg>
+
+<header id="hdr">
+  <nav class="nav wrap">
+    <a href="#top" class="brand"><svg><use href="#bird"/></svg><span>ჩიტი</span></a>
+    <div class="nav-links" id="navlinks">
+      <a href="#story" data-ka="ამბავი" data-en="Story">ამბავი</a>
+      <a href="#menu" data-ka="მენიუ" data-en="Menu">მენიუ</a>
+      <a href="#reviews" data-ka="შეფასებები" data-en="Reviews">შეფასებები</a>
+      <a href="#locations" data-ka="ლოკაციები" data-en="Locations">ლოკაციები</a>
+      <a href="#order" data-ka="კონტაქტი" data-en="Contact">კონტაქტი</a>
+      <a href="#order" class="cta-link" data-ka="შეუკვეთე" data-en="Order">შეუკვეთე</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="ka" class="active" onclick="setLang('ka')">ქარ</button>
+        <button id="en" onclick="setLang('en')">ENG</button>
+      </div>
+      <a href="#order" class="btn btn-primary" data-ka="დაჯავშნე" data-en="Reserve">დაჯავშნე</a>
+      <button class="hamburger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="nav-scrim" id="scrim"></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="blob b1" data-par="0.18"></div><div class="blob b2" data-par="0.10"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow fade-up" data-ka="ოჯახური კაფე • თბილისი" data-en="Family cafe • Tbilisi">ოჯახური კაფე • თბილისი</span>
+      <h1>
+        <span class="clip"><span data-ka="დილა, რომელსაც" data-en="The morning you">დილა, რომელსაც</span></span>
+        <span class="clip"><span class="em" data-ka="ელოდები." data-en="wake up for.">ელოდები.</span></span>
+      </h1>
+      <p class="lead fade-up d1"
+        data-ka="საუზმე მთელი დღე, თბილი ინტერიერი და საბავშვო ზონა. ჩიტი — ადგილი, სადაც ოჯახი და მეგობრები ერთად იკრიბებიან."
+        data-en="All-day breakfast, a warm interior and a real kids zone. Chiti — where family and friends gather around the table.">საუზმე მთელი დღე, თბილი ინტერიერი და საბავშვო ზონა. ჩიტი — ადგილი, სადაც ოჯახი და მეგობრები ერთად იკრიბებიან.</p>
+      <div class="hero-cta fade-up d2">
+        <a href="#order" class="btn btn-primary" data-ka="მაგიდის დაჯავშნა" data-en="Reserve a table">მაგიდის დაჯავშნა</a>
+        <a href="#menu" class="btn btn-ghost" data-ka="ნახე მენიუ" data-en="View menu">ნახე მენიუ</a>
+      </div>
+      <div class="hero-stats fade-up d3">
+        <div class="stat"><div class="n" data-count="4.7" data-dec="1" data-suf="★">0</div><div class="l" data-ka="340+ შეფასება Google-ზე" data-en="340+ Google reviews">340+ შეფასება Google-ზე</div></div>
+        <div class="stat"><div class="n" data-count="3" data-suf="">0</div><div class="l" data-ka="ლოკაცია თბილისში" data-en="locations in Tbilisi">ლოკაცია თბილისში</div></div>
+        <div class="stat"><div class="n" data-count="9.7" data-dec="1" data-suf="K">0</div><div class="l" data-ka="Instagram თემი" data-en="Instagram community">Instagram თემი</div></div>
+      </div>
+    </div>
+    <div class="hero-art fade-up d2">
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <svg class="bird-big"><use href="#bird"/></svg>
+      <div class="tag t1"><span class="dot"></span><span data-ka="საუზმე 10:00-დან" data-en="Breakfast from 10:00">საუზმე 10:00-დან</span></div>
+      <div class="tag t2"><span class="dot"></span><span data-ka="საბავშვო ზონა" data-en="Kids zone">საბავშვო ზონა</span></div>
+      <div class="tag t3"><span class="dot"></span><span data-ka="ახალი, ყოველდღე" data-en="Fresh, daily">ახალი, ყოველდღე</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span class="item" data-ka="ცხელი საუზმე ყოველდღე" data-en="Hot breakfast daily">ცხელი საუზმე ყოველდღე</span>
+    <span class="item" data-ka="საბავშვო ზონა" data-en="Kids zone">საბავშვო ზონა</span>
+    <span class="item" data-ka="3 ლოკაცია თბილისში" data-en="3 spots in Tbilisi">3 ლოკაცია თბილისში</span>
+    <span class="item" data-ka="ხელით მომზადებული" data-en="Made by hand">ხელით მომზადებული</span>
+    <span class="item" data-ka="Family & Friends" data-en="Family & Friends">Family &amp; Friends</span>
+    <span class="item" data-ka="ცხელი საუზმე ყოველდღე" data-en="Hot breakfast daily">ცხელი საუზმე ყოველდღე</span>
+    <span class="item" data-ka="საბავშვო ზონა" data-en="Kids zone">საბავშვო ზონა</span>
+    <span class="item" data-ka="3 ლოკაცია თბილისში" data-en="3 spots in Tbilisi">3 ლოკაცია თბილისში</span>
+    <span class="item" data-ka="ხელით მომზადებული" data-en="Made by hand">ხელით მომზადებული</span>
+    <span class="item" data-ka="Family & Friends" data-en="Family & Friends">Family &amp; Friends</span>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="wrap values-grid">
+    <div class="value reveal" data-d="1">
+      <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3 data-ka="საუზმე მთელი დღე" data-en="All-day breakfast">საუზმე მთელი დღე</h3>
+      <p data-ka="დაგვიანებული დილა? ჩვენთან საუზმე დახურვამდე გრძელდება." data-en="Slow morning? Breakfast runs right until closing time.">დაგვიანებული დილა? ჩვენთან საუზმე დახურვამდე გრძელდება.</p>
+    </div>
+    <div class="value reveal" data-d="2">
+      <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M16 8l2 2 4-4"/></svg></div>
+      <h3 data-ka="საბავშვო ზონა და მენიუ" data-en="Kids zone & menu">საბავშვო ზონა და მენიუ</h3>
+      <p data-ka="სათამაშოები ბავშვებს, სიმშვიდე მშობლებს — ცალკე საბავშვო მენიუთ." data-en="Toys for the little ones, calm for parents — plus a dedicated kids menu.">სათამაშოები ბავშვებს, სიმშვიდე მშობლებს — ცალკე საბავშვო მენიუთ.</p>
+    </div>
+    <div class="value reveal" data-d="3">
+      <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+      <h3 data-ka="3 ლოკაცია" data-en="3 locations">3 ლოკაცია</h3>
+      <p data-ka="ვაკე, ვაკის პარკი და საბურთალო — ყველგან ერთი და იგივე გემო." data-en="Vake, Vake Park and Saburtalo — the same taste at every door.">ვაკე, ვაკის პარკი და საბურთალო — ყველგან ერთი და იგივე გემო.</p>
+    </div>
+    <div class="value reveal" data-d="4">
+      <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13v8H3zM16 10h3l2 3v2h-5z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg></div>
+      <h3 data-ka="მიტანის სერვისი" data-en="Delivery">მიტანის სერვისი</h3>
+      <p data-ka="Wolt-ით და Glovo-ით — დილის საუზმე პირდაპირ კართან." data-en="Via Wolt and Glovo — breakfast brought straight to your door.">Wolt-ით და Glovo-ით — დილის საუზმე პირდაპირ კართან.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-art reveal">
+      <div class="story-inner" data-parallax="0.07">
+        <div class="halo"></div>
+        <svg class="big-bird"><use href="#bird"/></svg>
+        <span class="est">est. Tbilisi</span>
+      </div>
+    </div>
+    <div class="story-text reveal" data-d="1">
+      <span class="eyebrow" data-ka="ჩვენი ამბავი" data-en="Our story">ჩვენი ამბავი</span>
+      <h2 data-ka="პატარა ჩიტი, დიდი მაგიდა" data-en="A little bird, a big table">პატარა ჩიტი, დიდი მაგიდა</h2>
+      <p data-ka="ჩიტი დაიბადა მარტივი იდეიდან — ადგილი, სადაც დილა ნელა იწყება, ყავა ცხელია და ბავშვებსაც თავისი კუთხე აქვთ." data-en="Chiti began with a simple idea — a place where mornings start slowly, the coffee is hot, and kids have a corner of their own.">ჩიტი დაიბადა მარტივი იდეიდან — ადგილი, სადაც დილა ნელა იწყება, ყავა ცხელია და ბავშვებსაც თავისი კუთხე აქვთ.</p>
+      <p data-ka="ყველა კერძი ყოველ დილით ხელით მზადდება — ყაბაყის ვაფლიდან დრანიკამდე. არანაირი ნახევარფაბრიკატი, მხოლოდ ის, რასაც ჩვენს ოჯახსაც შევთავაზებდით." data-en="Every dish is made by hand each morning — from zucchini waffles to draniki. No shortcuts, just what we'd serve our own family.">ყველა კერძი ყოველ დილით ხელით მზადდება — ყაბაყის ვაფლიდან დრანიკამდე. არანაირი ნახევარფაბრიკატი, მხოლოდ ის, რასაც ჩვენს ოჯახსაც შევთავაზებდით.</p>
+      <p data-ka="დღეს ჩიტი <strong>სამ უბანშია</strong> — ვაკეში, ვაკის პარკში და საბურთალოზე. იგივე გემო, იგივე სითბო." data-en="Today Chiti lives in <strong>three neighborhoods</strong> — Vake, Vake Park and Saburtalo. Same taste, same warmth.">დღეს ჩიტი <strong>სამ უბანშია</strong> — ვაკეში, ვაკის პარკში და საბურთალოზე. იგივე გემო, იგივე სითბო.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ka="რას გავსინჯავთ" data-en="What's cooking">რას გავსინჯავთ</span>
+      <h2 data-ka="ხელით მომზადებული, ყოველ დილით" data-en="Made by hand, every morning">ხელით მომზადებული, ყოველ დილით</h2>
+      <p data-ka="რამდენიმე საყვარელი კერძი ჩვენი მენიუდან. სრული არჩევანი — ადგილზე და მიტანის აპლიკაციებში." data-en="A few favourites from the menu. The full list lives in the cafe and on the delivery apps.">რამდენიმე საყვარელი კერძი ჩვენი მენიუდან. სრული არჩევანი — ადგილზე და მიტანის აპლიკაციებში.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card reveal" data-d="1">
+        <h3><span class="cat-mark">01</span><span data-ka="საუზმე" data-en="Breakfast">საუზმე</span></h3>
+        <div class="dish"><span class="d-name" data-ka="ინგლისური საუზმე" data-en="English breakfast">ინგლისური საუზმე<span class="d-desc" data-ka="კვერცხი, ძეხვი, ლობიო, ტოსტი" data-en="eggs, sausage, beans, toast">კვერცხი, ძეხვი, ლობიო, ტოსტი</span></span><span class="d-price">26₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="დრანიკი არაჟანით" data-en="Draniki with sour cream">დრანიკი არაჟანით<span class="d-desc" data-ka="კარტოფილის ხრაშუნა ბლინი" data-en="crispy potato pancakes">კარტოფილის ხრაშუნა ბლინი</span></span><span class="d-price">18₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="შაქშუკა" data-en="Shakshuka">შაქშუკა<span class="d-desc" data-ka="კვერცხი ტომატის სოუსში" data-en="eggs poached in tomato">კვერცხი ტომატის სოუსში</span></span><span class="d-price">22₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ბრინჯის ფაფა" data-en="Rice porridge">ბრინჯის ფაფა<span class="d-desc" data-ka="თბილი, კრემისებრი დილისთვის" data-en="warm & creamy to start the day">თბილი, კრემისებრი დილისთვის</span></span><span class="d-price">14₾</span></div>
+      </div>
+      <div class="menu-card reveal" data-d="2">
+        <h3><span class="cat-mark">02</span><span data-ka="ბოულები და სალათები" data-en="Bowls & Salads">ბოულები და სალათები</span></h3>
+        <div class="dish"><span class="d-name" data-ka="ქათამი და სოკოს ტორტილია" data-en="Chicken & mushroom tortilla">ქათამი და სოკოს ტორტილია<span class="d-desc" data-ka="გახვეული, თბილი" data-en="warm, wrapped">გახვეული, თბილი</span></span><span class="d-price">21₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ცეზარი ქათმით" data-en="Caesar with chicken">ცეზარი ქათმით</span><span class="d-price">23₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ქაშაყის სალათი" data-en="Herring salad">ქაშაყის სალათი<span class="d-desc" data-ka="სახლის სტილში" data-en="house style">სახლის სტილში</span></span><span class="d-price">19₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="სეზონური ბოული" data-en="Seasonal bowl">სეზონური ბოული</span><span class="d-price">24₾</span></div>
+      </div>
+      <div class="menu-card reveal" data-d="3">
+        <h3><span class="cat-mark">03</span><span data-ka="ვაფლი და ტკბილი" data-en="Waffles & Sweet">ვაფლი და ტკბილი</span></h3>
+        <div class="dish"><span class="d-name" data-ka="ყაბაყის ვაფლი" data-en="Zucchini waffles">ყაბაყის ვაფლი<span class="d-desc" data-ka="ჩვენი ხელის ნიშანი" data-en="our signature">ჩვენი ხელის ნიშანი</span></span><span class="d-price">20₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="სირნიკი ალუბლით" data-en="Syrniki with cherry">სირნიკი ალუბლით<span class="d-desc" data-ka="ხაჭოს ბლინები, კონფიტური" data-en="cottage-cheese cakes, compote">ხაჭოს ბლინები, კონფიტური</span></span><span class="d-price">17₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ტკბილი ვაფლი" data-en="Sweet waffle">ტკბილი ვაფლი</span><span class="d-price">16₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ბასკური ჩიზქეიქი" data-en="Basque cheesecake">ბასკური ჩიზქეიქი</span><span class="d-price">15₾</span></div>
+      </div>
+      <div class="menu-card reveal" data-d="4">
+        <h3><span class="cat-mark">04</span><span data-ka="სასმელები" data-en="Drinks">სასმელები</span></h3>
+        <div class="dish"><span class="d-name" data-ka="ფლეთ უაიტი" data-en="Flat white">ფლეთ უაიტი</span><span class="d-price">12₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="მაჩა ტონიკი" data-en="Matcha tonic">მაჩა ტონიკი<span class="d-desc" data-ka="გამაგრილებელი" data-en="refreshing">გამაგრილებელი</span></span><span class="d-price">15₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="სახლის ლიმონათი" data-en="House lemonade">სახლის ლიმონათი</span><span class="d-price">11₾</span></div>
+        <div class="dish"><span class="d-name" data-ka="ცხელი შოკოლადი" data-en="Hot chocolate">ცხელი შოკოლადი</span><span class="d-price">13₾</span></div>
+      </div>
+    </div>
+    <div class="menu-foot reveal">
+      <a href="#order" class="btn btn-ghost" data-ka="სრული მენიუ და შეკვეთა" data-en="Full menu & order">სრული მენიუ და შეკვეთა</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="rev-head reveal">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow" data-ka="რას ამბობენ სტუმრები" data-en="What guests say">რას ამბობენ სტუმრები</span>
+        <h2 data-ka="სიყვარული, ცხელ თეფშზე" data-en="Love, served warm">სიყვარული, ცხელ თეფშზე</h2>
+      </div>
+      <a class="gbadge" href="https://maps.google.com/?q=Chiti+Cafe+Tbilisi" target="_blank" rel="noopener">
+        <div class="score">4.7</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="meta" data-ka="340+ შეფასება · Google" data-en="340+ reviews · Google">340+ შეფასება · Google</div>
+        </div>
+      </a>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal" data-d="1">
+        <div class="quote" data-ka="„იდეალური ადგილი ბავშვებიან ოჯახებისთვის. პატარები საათობით ერთობიან საბავშვო ზონაში, საუზმე კი ნამდვილად გემრიელია."" data-en="“The ideal spot for families with kids. The little ones stay busy in the play zone for hours, and the breakfast is genuinely delicious.”">„იდეალური ადგილი ბავშვებიან ოჯახებისთვის. პატარები საათობით ერთობიან საბავშვო ზონაში, საუზმე კი ნამდვილად გემრიელია."</div>
+        <div class="who"><div class="av">ნ</div><div><div class="nm">ნინო კ.</div><div class="sub" data-ka="ადგილობრივი გიდი · Google" data-en="Local Guide · Google">ადგილობრივი გიდი · Google</div></div></div>
+      </div>
+      <div class="rev reveal" data-d="2">
+        <div class="quote" data-ka="„სწრაფი და თავაზიანი მომსახურება, თბილი ატმოსფერო. ყაბაყის ვაფლი და სირნიკი — უნდა გასინჯო."" data-en="“Fast, friendly service and a warm atmosphere. The zucchini waffles and the syrniki are a must.”">„სწრაფი და თავაზიანი მომსახურება, თბილი ატმოსფერო. ყაბაყის ვაფლი და სირნიკი — უნდა გასინჯო."</div>
+        <div class="who"><div class="av">L</div><div><div class="nm">Luka M.</div><div class="sub" data-ka="შეფასება · Google" data-en="Review · Google">შეფასება · Google</div></div></div>
+      </div>
+      <div class="rev reveal" data-d="3">
+        <div class="quote" data-ka="„ჩემი საყვარელი საუზმის ადგილი ვაკეში. მყუდრო, მინიმალისტური და ლეპტოპით მუშაობაც კომფორტულია."" data-en="“My favourite breakfast spot in Vake. Cozy, minimal, and comfortable enough to work from with a laptop.”">„ჩემი საყვარელი საუზმის ადგილი ვაკეში. მყუდრო, მინიმალისტური და ლეპტოპით მუშაობაც კომფორტულია."</div>
+        <div class="who"><div class="av">A</div><div><div class="nm">Ana T.</div><div class="sub" data-ka="შეფასება · Google" data-en="Review · Google">შეფასება · Google</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ka="გვიპოვე" data-en="Find us">გვიპოვე</span>
+      <h2 data-ka="სამი კარი, ერთი ჩიტი" data-en="Three doors, one Chiti">სამი კარი, ერთი ჩიტი</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc reveal" data-d="1">
+        <div class="loc-top"><svg><use href="#bird"/></svg></div>
+        <div class="loc-body">
+          <h3 data-ka="ვაკე" data-en="Vake">ვაკე</h3>
+          <p class="addr">ე. თაყაიშვილის ქ. 3</p>
+          <div class="hrs"><span class="pulse"></span><span data-ka="ყოველდღე 10:00 – 21:00" data-en="Daily 10:00 – 21:00">ყოველდღე 10:00 – 21:00</span></div><br>
+          <a class="maps" href="https://maps.google.com/?q=Chiti+Cafe+Takaishvili+Tbilisi" target="_blank" rel="noopener" data-ka="რუკაზე ნახვა →" data-en="Open in Maps →">რუკაზე ნახვა →</a>
+        </div>
+      </div>
+      <div class="loc reveal" data-d="2">
+        <div class="loc-top"><span class="badge" data-ka="ღია სივრცე" data-en="Open air">ღია სივრცე</span><svg><use href="#bird"/></svg></div>
+        <div class="loc-body">
+          <h3 data-ka="ვაკის პარკი" data-en="Vake Park">ვაკის პარკი</h3>
+          <p class="addr" data-ka="ვაკის პარკის ტერიტორია" data-en="Inside Vake Park">ვაკის პარკის ტერიტორია</p>
+          <div class="hrs"><span class="pulse"></span><span data-ka="ყოველდღე 10:00 – 21:00" data-en="Daily 10:00 – 21:00">ყოველდღე 10:00 – 21:00</span></div><br>
+          <a class="maps" href="https://maps.google.com/?q=Chiti+Cafe+Vake+Park+Tbilisi" target="_blank" rel="noopener" data-ka="რუკაზე ნახვა →" data-en="Open in Maps →">რუკაზე ნახვა →</a>
+        </div>
+      </div>
+      <div class="loc reveal" data-d="3">
+        <div class="loc-top"><svg><use href="#bird"/></svg></div>
+        <div class="loc-body">
+          <h3 data-ka="საბურთალო" data-en="Saburtalo">საბურთალო</h3>
+          <p class="addr">ს. კანდელაკის ქ. 39</p>
+          <div class="hrs"><span class="pulse"></span><span data-ka="ყოველდღე 10:00 – 21:00" data-en="Daily 10:00 – 21:00">ყოველდღე 10:00 – 21:00</span></div><br>
+          <a class="maps" href="https://maps.google.com/?q=Chiti+Cafe+Kandelaki+Tbilisi" target="_blank" rel="noopener" data-ka="რუკაზე ნახვა →" data-en="Open in Maps →">რუკაზე ნახვა →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING / EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="events-band reveal">
+      <svg class="ghost-bird"><use href="#bird"/></svg>
+      <div>
+        <span class="eyebrow" style="color:rgba(255,255,255,.85)" data-ka="დღესასწაულები და catering" data-en="Events & catering">დღესასწაულები და catering</span>
+        <h2 data-ka="საბავშვო დაბადების დღე ჩიტში?" data-en="A kids' birthday at Chiti?">საბავშვო დაბადების დღე ჩიტში?</h2>
+        <p data-ka="დავგეგმოთ ერთად — საბავშვო ზეიმები, ოჯახური შეკრებები ან ოფისის საუზმე. ცალკე სივრცე, საბავშვო მენიუ და მთლიანი catering შენს მისამართზე." data-en="Let's plan it together — kids' parties, family gatherings or an office breakfast. A private space, a kids menu, and full catering to your address.">დავგეგმოთ ერთად — საბავშვო ზეიმები, ოჯახური შეკრებები ან ოფისის საუზმე. ცალკე სივრცე, საბავშვო მენიუ და მთლიანი catering შენს მისამართზე.</p>
+        <div class="events-tags">
+          <span data-ka="საბავშვო ზეიმები" data-en="Kids parties">საბავშვო ზეიმები</span>
+          <span data-ka="ჯგუფური ჯავშანი" data-en="Group bookings">ჯგუფური ჯავშანი</span>
+          <span data-ka="ოფისის catering" data-en="Office catering">ოფისის catering</span>
+        </div>
+      </div>
+      <div class="events-cta">
+        <a href="#order" class="btn btn-white" data-ka="დაგეგმე ღონისძიება" data-en="Plan an event">დაგეგმე ღონისძიება</a>
+        <a href="tel:+995511248923" class="btn btn-line" data-ka="დარეკე ახლავე" data-en="Call us now">დარეკე ახლავე</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / RESERVE -->
+<section id="order">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-ka="შეუკვეთე ან დაჯავშნე" data-en="Order or reserve">შეუკვეთე ან დაჯავშნე</span>
+      <h2 data-ka="მოდი ჩვენთან — ან ჩვენ მოვალთ შენთან" data-en="Come to us — or we'll come to you">მოდი ჩვენთან — ან ჩვენ მოვალთ შენთან</h2>
+    </div>
+    <div class="order-grid">
+      <div class="delivery-box reveal" data-d="1">
+        <h3 data-ka="მიტანა" data-en="Delivery">მიტანა</h3>
+        <p data-ka="აირჩიე შენი აპლიკაცია და შეუკვეთე რამდენიმე წამში." data-en="Pick your app and order in seconds.">აირჩიე შენი აპლიკაცია და შეუკვეთე რამდენიმე წამში.</p>
+        <div class="delivery-btns">
+          <a class="dlv" href="https://wolt.com/en/geo/tbilisi/restaurant/chiti" target="_blank" rel="noopener"><span>Wolt</span><span class="arr">→</span></a>
+          <a class="dlv" href="https://glovoapp.com/ge/en/tbilisi/" target="_blank" rel="noopener"><span>Glovo</span><span class="arr">→</span></a>
+          <a class="dlv" href="tel:+995511248923"><span data-ka="დარეკე: 511 24 89 23" data-en="Call: 511 24 89 23">დარეკე: 511 24 89 23</span><span class="arr">→</span></a>
+        </div>
+      </div>
+
+      <form class="reserve reveal" data-d="2" onsubmit="return reserve(event)">
+        <h3 data-ka="მაგიდის დაჯავშნა" data-en="Reserve a table">მაგიდის დაჯავშნა</h3>
+        <p class="fsub" data-ka="დაგვიტოვე დეტალები — დაგირეკავთ დასადასტურებლად." data-en="Leave your details — we'll call to confirm.">დაგვიტოვე დეტალები — დაგირეკავთ დასადასტურებლად.</p>
+        <div class="field">
+          <label data-ka="სახელი" data-en="Name">სახელი</label>
+          <input type="text" required data-ka-ph="თქვენი სახელი" data-en-ph="Your name" placeholder="თქვენი სახელი">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label data-ka="ტელეფონი" data-en="Phone">ტელეფონი</label>
+            <input type="tel" required placeholder="5XX XX XX XX">
+          </div>
+          <div class="field">
+            <label data-ka="ლოკაცია" data-en="Location">ლოკაცია</label>
+            <select required>
+              <option value="" data-ka="აირჩიე" data-en="Choose">აირჩიე</option>
+              <option data-ka="ვაკე" data-en="Vake">ვაკე</option>
+              <option data-ka="ვაკის პარკი" data-en="Vake Park">ვაკის პარკი</option>
+              <option data-ka="საბურთალო" data-en="Saburtalo">საბურთალო</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label data-ka="სტუმრები" data-en="Guests">სტუმრები</label>
+            <input type="number" min="1" max="20" value="2" required>
+          </div>
+          <div class="field">
+            <label data-ka="თარიღი და დრო" data-en="Date & time">თარიღი და დრო</label>
+            <input type="datetime-local" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-ka="დაჯავშნა" data-en="Reserve">დაჯავშნა</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><svg><use href="#bird"/></svg><span>ჩიტი</span></a>
+        <p data-ka="Family & Friends Cafe. დილის საუზმე, თბილი მაგიდები და ადგილი ბავშვებისთვის — თბილისის სამ წერტილში." data-en="Family & Friends Cafe. Morning breakfast, warm tables and a place for kids — across three corners of Tbilisi.">Family & Friends Cafe. დილის საუზმე, თბილი მაგიდები და ადგილი ბავშვებისთვის — თბილისის სამ წერტილში.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-ka="ნავიგაცია" data-en="Navigate">ნავიგაცია</h4>
+        <a href="#story" data-ka="ამბავი" data-en="Story">ამბავი</a>
+        <a href="#menu" data-ka="მენიუ" data-en="Menu">მენიუ</a>
+        <a href="#locations" data-ka="ლოკაციები" data-en="Locations">ლოკაციები</a>
+        <a href="#order" data-ka="დაჯავშნა" data-en="Reserve">დაჯავშნა</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-ka="კონტაქტი" data-en="Contact">კონტაქტი</h4>
+        <a href="tel:+995511248923">+995 511 24 89 23</a>
+        <a href="https://instagram.com/chiti.cafe" target="_blank" rel="noopener">Instagram @chiti.cafe</a>
+        <p data-ka="ყოველდღე 10:00 – 21:00" data-en="Daily 10:00 – 21:00">ყოველდღე 10:00 – 21:00</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> ჩიტი · Chiti — Family &amp; Friends Cafe</span>
+      <span data-ka="დამზადებულია სიყვარულით, თბილისში" data-en="Made with love in Tbilisi">დამზადებულია სიყვარულით, თბილისში</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span id="toast-txt"></span></div>
+
+<script>
+  let lang='ka';
+  function setLang(l){
+    lang=l; document.documentElement.lang=l;
+    document.getElementById('ka').classList.toggle('active',l==='ka');
+    document.getElementById('en').classList.toggle('active',l==='en');
+    document.querySelectorAll('[data-ka]').forEach(el=>{
+      const v=el.getAttribute('data-'+l);
+      if(v!==null){ if(v.indexOf('<strong>')>-1) el.innerHTML=v; else el.textContent=v; }
+    });
+    document.querySelectorAll('[data-ka-ph]').forEach(el=>{
+      const v=el.getAttribute('data-'+l+'-ph'); if(v!==null) el.placeholder=v;
+    });
+  }
+
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>30);
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  const burger=document.getElementById('burger'), navlinks=document.getElementById('navlinks'), scrim=document.getElementById('scrim');
+  function setNav(open){
+    burger.classList.toggle('active',open);
+    navlinks.classList.toggle('open',open);
+    scrim.classList.toggle('show',open);
+    document.body.classList.toggle('nav-open',open);
+  }
+  burger.addEventListener('click',()=>setNav(!navlinks.classList.contains('open')));
+  scrim.addEventListener('click',()=>setNav(false));
+  navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
+
+  /* scroll reveal */
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* count-up stats */
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function countUp(el){
+    const target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||'0'), suf=el.dataset.suf||'';
+    if(reduce){el.textContent=target.toFixed(dec)+suf;return;}
+    const dur=1100, t0=performance.now();
+    function step(now){
+      const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=(target*e).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(step); else el.textContent=target.toFixed(dec)+suf;
+    }
+    requestAnimationFrame(step);
+  }
+  const statIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){countUp(e.target);statIO.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el=>statIO.observe(el));
+
+  /* subtle parallax: hero blobs (scroll-anchored) + story art (viewport-relative) */
+  if(!reduce){
+    const pars=document.querySelectorAll('[data-par]');
+    const plx=document.querySelectorAll('[data-parallax]');
+    let ticking=false;
+    function frame(){
+      const y=window.scrollY, vh=window.innerHeight;
+      pars.forEach(p=>p.style.transform=`translateY(${y*parseFloat(p.dataset.par)}px)`);
+      plx.forEach(el=>{
+        const r=el.getBoundingClientRect();
+        if(r.bottom<0||r.top>vh){ticking=false;return;}
+        const off=((r.top+r.height/2)-vh/2)*parseFloat(el.dataset.parallax);
+        el.style.transform=`translate3d(0,${off.toFixed(1)}px,0)`;
+      });
+      ticking=false;
+    }
+    window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame);}},{passive:true});
+    frame();
+  }
+
+  function reserve(e){
+    e.preventDefault();
+    const t=document.getElementById('toast');
+    document.getElementById('toast-txt').textContent=lang==='ka'?'მადლობა! მალე დაგირეკავთ დასადასტურებლად.':'Thanks! We will call you shortly to confirm.';
+    t.classList.add('show'); e.target.reset();
+    setTimeout(()=>t.classList.remove('show'),3800);
+    return false;
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
